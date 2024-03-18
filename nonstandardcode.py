@@ -56,17 +56,22 @@ def income_cat_proportions(data):
 
 train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 
-compare_props = pd.DataFrame({
-        "Overall": income_cat_proportions(housing),
-        "Stratified": income_cat_proportions(strat_test_set),
-        "Random": income_cat_proportions(test_set),
-}).sort_index()
-compare_props["Rand. %error"] = (
-    100 * compare_props["Random"] / compare_props["Overall"] - 100
+compare_props = pd.DataFrame()
+
+compare_props["Overall"] = income_cat_proportions(housing)
+compare_props["Stratified"] = income_cat_proportions(strat_test_set)
+compare_props["Random"] = income_cat_proportions(test_set)
+compare_props = compare_props.sort_index()
+
+compare_props = compare_props.assign(
+    Rand_error=lambda x: 100 * (x["Random"] / x["Overall"] - 1),
+    Strat_error=lambda x: 100 * (x["Stratified"] / x["Overall"] - 1)
 )
-compare_props["Strat. %error"] = (
-    100 * compare_props["Stratified"] / compare_props["Overall"] - 100
-)
+
+compare_props = compare_props.rename(columns={
+    "Rand_error": "Rand_error_percent",
+    "Strat_error": "Strat_error_percent"
+})
 
 for set_ in (strat_train_set, strat_test_set):
     set_.drop("income_cat", axis=1)
@@ -79,8 +84,10 @@ corr_matrix = housing.corr()
 corr_matrix["median_house_value"].sort_values(ascending=False)
 housing["rooms_per_household"] = (
      housing["total_rooms"] / housing["households"])
-housing["bedrooms_per_room"] = housing["total_bedrooms"] / housing["total_rooms"]
-housing["population_per_household"] = housing["population"] / housing["households"]
+housing["bedrooms_per_room"] = (
+    housing["total_bedrooms"] / housing["total_rooms"])
+housing["population_per_household"] = (
+    housing["population"] / housing["households"])
 
 housing = strat_train_set.drop(
     "median_house_value", axis=1
@@ -97,7 +104,8 @@ X = imputer.transform(housing_num)
 
 housing_tr = pd.DataFrame(
     X, columns=housing_num.columns, index=housing.index)
-housing_tr["rooms_per_household"] = housing_tr["total_rooms"] / housing_tr["households"]
+housing_tr["rooms_per_household"] = (
+    housing_tr["total_rooms"] / housing_tr["households"])
 housing_tr["bedrooms_per_room"] = (
     housing_tr["total_bedrooms"] / housing_tr["total_rooms"]
 )
@@ -106,7 +114,8 @@ housing_tr["population_per_household"] = (
 )
 
 housing_cat = housing[["ocean_proximity"]]
-housing_prepared = housing_tr.join(pd.get_dummies(housing_cat, drop_first=True))
+housing_prepared = housing_tr.join(
+    pd.get_dummies(housing_cat, drop_first=True))
 
 
 lin_reg = LinearRegression()
