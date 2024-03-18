@@ -4,5 +4,6 @@
     "editor.codeActionsOnSave": [
         "source.organizeImports",
         "source.formatDocument"
-    ]
+    ],
+    "isort.check": true
 }
