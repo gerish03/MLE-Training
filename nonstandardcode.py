@@ -65,12 +65,12 @@ compare_props = compare_props.sort_index()
 
 compare_props = compare_props.assign(
     Rand_error=lambda x: 100 * (x["Random"] / x["Overall"] - 1),
-    Strat_error=lambda x: 100 * (x["Stratified"] / x["Overall"] - 1)
+    strat_error=lambda x: 100 * (x["stratified"] / x["Overall"] - 1)
 )
 
 compare_props = compare_props.rename(columns={
     "Rand_error": "Rand_error_percent",
-    "Strat_error": "Strat_error_percent"
+    "strat_error": "strat_error_percent"
 })
 
 for set_ in (strat_train_set, strat_test_set):
