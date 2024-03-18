@@ -9,12 +9,8 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error
-from sklearn.model_selection import (
-    GridSearchCV,
-    RandomizedSearchCV,
-    StratifiedShuffleSplit,
-    train_test_split,
-)
+from sklearn.model_selection import (GridSearchCV, RandomizedSearchCV,
+                                     StratifiedShuffleSplit, train_test_split)
 from sklearn.tree import DecisionTreeRegressor
 
 DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml/master/"
@@ -41,7 +37,7 @@ housing = load_housing_data()
 
 train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 
-housing["income_cat"] = pd.cut(
+housing = pd.cut(
     housing["median_income"],
     bins=[0.0, 1.5, 3.0, 4.5, 6.0, np.inf],
     labels=[1, 2, 3, 4, 5],
@@ -60,13 +56,11 @@ def income_cat_proportions(data):
 
 train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 
-compare_props = pd.DataFrame(
-    {
+compare_props = pd.DataFrame({
         "Overall": income_cat_proportions(housing),
         "Stratified": income_cat_proportions(strat_test_set),
         "Random": income_cat_proportions(test_set),
-    }
-).sort_index()
+}).sort_index()
 compare_props["Rand. %error"] = (
     100 * compare_props["Random"] / compare_props["Overall"] - 100
 )
@@ -75,7 +69,7 @@ compare_props["Strat. %error"] = (
 )
 
 for set_ in (strat_train_set, strat_test_set):
-    set_.drop("income_cat", axis=1, inplace=True)
+    set_.drop("income_cat", axis=1)
 
 housing = strat_train_set.copy()
 housing.plot(kind="scatter", x="longitude", y="latitude")
@@ -83,7 +77,8 @@ housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
 
 corr_matrix = housing.corr()
 corr_matrix["median_house_value"].sort_values(ascending=False)
-housing["rooms_per_household"] = housing["total_rooms"] / housing["households"]
+housing["rooms_per_household"] = (
+     housing["total_rooms"] / housing["households"])
 housing["bedrooms_per_room"] = housing["total_bedrooms"] / housing["total_rooms"]
 housing["population_per_household"] = housing["population"] / housing["households"]
 
@@ -100,7 +95,8 @@ housing_num = housing.drop("ocean_proximity", axis=1)
 imputer.fit(housing_num)
 X = imputer.transform(housing_num)
 
-housing_tr = pd.DataFrame(X, columns=housing_num.columns, index=housing.index)
+housing_tr = pd.DataFrame(
+    X, columns=housing_num.columns, index=housing.index)
 housing_tr["rooms_per_household"] = housing_tr["total_rooms"] / housing_tr["households"]
 housing_tr["bedrooms_per_room"] = (
     housing_tr["total_bedrooms"] / housing_tr["total_rooms"]
@@ -204,7 +200,8 @@ X_test_prepared["population_per_household"] = (
 )
 
 X_test_cat = X_test[["ocean_proximity"]]
-X_test_prepared = X_test_prepared.join(pd.get_dummies(X_test_cat, drop_first=True))
+X_test_prepared = X_test_prepared.join(
+    pd.get_dummies(X_test_cat, drop_first=True))
 
 
 final_predictions = final_model.predict(X_test_prepared)
