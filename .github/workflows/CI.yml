@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - 2.1
+      - continuous/iss#7/integration
 
 jobs:
   build_and_test:
