@@ -1,0 +1,31 @@
+name: Package Build and Tests
+
+on:
+  push:
+    branches:
+      - main
+      - 2.1
+
+jobs:
+  build_and_test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: my-env
+          environment-file: env.yml
+
+      - name: Run Flake8
+        run: |
+          conda run -n my-env flake8
+
+      - name: Run nonstandardcode.py
+        run: |
+          pwd
+          conda run -n my-env python nonstandardcode.py
