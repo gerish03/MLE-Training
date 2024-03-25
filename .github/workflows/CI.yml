@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - continuous/iss#7/integration
+
   pull_request:
     branches:
       - main
