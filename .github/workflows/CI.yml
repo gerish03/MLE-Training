@@ -3,13 +3,18 @@ name: Package Build and Tests
 on:
   push:
     branches:
-      - main
       - continuous/iss#7/integration
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build_and_test:
     name: Build and Test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
 
     steps:
       - name: Checkout Repository
@@ -23,9 +28,9 @@ jobs:
 
       - name: Run Flake8
         run: |
-          conda run -n my-env flake8
+          flake8 nonstandardcode.py
 
       - name: Run nonstandardcode.py
         run: |
           pwd
-          conda run -n my-env python nonstandardcode.py
+          python nonstandardcode.py
