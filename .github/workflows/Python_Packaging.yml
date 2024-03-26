@@ -1,0 +1,65 @@
+name: Python Packaging Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install Tree
+        run: sudo apt-get install tree -y
+
+      - name: Display Tree Before Building
+        run: tree
+
+      - name: Build Package
+        run: |
+          pip install build
+          python -m build
+
+      - name: Display Tree After Building
+        run: tree
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Python-Package-Artifacts-MLE
+          path: dist/
+
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+    needs: build
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Conda Environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: my-env
+          environment-file: env.yml
+          auto-activate-base: false
+
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: Python-Package-Artifacts-MLE
+
+      - name: Install Package
+        run: |
+          pip install *.whl
+
+      - name: Run nonstandardcode.py
+        run: python -c "from mypackage import nonstandardcode"
