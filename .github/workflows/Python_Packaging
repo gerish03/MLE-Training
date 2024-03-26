@@ -1,0 +1,66 @@
+name: Python_Packaging
+
+on:
+  push:
+    branches:
+        - main
+        - python/iss#9/packaging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install tree
+      - run: sudo apt-get install tree
+
+      - name: Display Tree Before Building
+        run: tree
+
+      - name: Build Package
+        run: |
+            pip install build
+            python -m build
+
+      - name: Display Tree After Building
+        run: tree
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+            name: Python-Package-Artifacts
+            path: dist/
+
+deploy:
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -el {0}
+    needs: build
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: Setup Conda Environment
+          uses: conda-incubator/setup-miniconda@v3
+            with:
+                activate-environment: my-env
+                environment-file: env.yml
+                auto-activate-base: flase
+
+        - name: Download Artifact
+          uses: action/download-artifact@v4
+            with:
+                name: Python-package-Artifacts-MLE-Training
+
+        - name: Install Package
+          uses: |
+              pip install *.whl
+
+        - name: Run nonstandardcode.py
+          run: Python src/Python_package
