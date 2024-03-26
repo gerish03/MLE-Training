@@ -59,7 +59,7 @@ jobs:
 
       - name: Install Package
         run: |
-          pip install *.whl
+          pip install python_package-0.0.1-py3-none-any.whl
 
       - name: Run nonstandardcode.py
-        run: python -c "from mypackage import nonstandardcode"
+        run: python -m python_package.nonstandardcode
