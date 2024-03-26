@@ -53,6 +53,7 @@ jobs:
       - name: Install Package
         run: |
           tree
+          pip install mypackage-0.0.1-py3-none-any.whl
           pip install *.whl
 
       - name: Setup Conda Environment
