@@ -63,4 +63,4 @@ jobs:
           auto-activate-base: false
 
       - name: Run nonstandardcode.py
-        run: python src/Python_package/nonstandardcode.py
+        run: python -m mypackage.nonstandardcode
