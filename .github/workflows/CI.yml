@@ -25,9 +25,9 @@ jobs:
           auto-activate-base: false
 
       - name: Run Flake8
-        run: flake8 src/Python_package/nonstandardcode.py
+        run: flake8 src/mypackage/nonstandardcode.py
 
       - name: Run nonstandardcode.py
         run: |
           pwd
-          python src/Python_package/nonstandardcode.py
+          python src/mypackage/nonstandardcode.py
