@@ -1,10 +1,10 @@
-name: Python_Packaging
+name: Python Packaging Workflow
 
 on:
   push:
     branches:
-        - main
-        - python/iss#9/packaging
+      - main
+      - python/iss#9/packaging
 
 jobs:
   build:
@@ -13,54 +13,55 @@ jobs:
       run:
         shell: bash -el {0}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-      - name: Install tree
-      - run: sudo apt-get install tree
+      - name: Install Tree
+        run: sudo apt-get install tree -y
 
       - name: Display Tree Before Building
         run: tree
 
       - name: Build Package
         run: |
-            pip install build
-            python -m build
+          pip install build
+          python -m build
 
       - name: Display Tree After Building
         run: tree
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
         with:
-            name: Python-Package-Artifacts
-            path: dist/
+          name: Python-Package-Artifacts-MLE-Training
+          path: dist/
 
-deploy:
+  deploy:
     runs-on: ubuntu-latest
     defaults:
-        run:
-          shell: bash -el {0}
+      run:
+        shell: bash -el {0}
     needs: build
     steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-        - name: Setup Conda Environment
-          uses: conda-incubator/setup-miniconda@v3
-            with:
-                activate-environment: my-env
-                environment-file: env.yml
-                auto-activate-base: flase
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: Python-Package-Artifacts-MLE-Training
 
-        - name: Download Artifact
-          uses: action/download-artifact@v4
-            with:
-                name: Python-package-Artifacts-MLE-Training
+      - name: Install Package
+        run: |
+          tree
+          pip install *.whl
 
-        - name: Install Package
-          uses: |
-              pip install *.whl
+      - name: Setup Conda Environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: my-env
+          environment-file: env.yml
+          auto-activate-base: false
 
-        - name: Run nonstandardcode.py
-          run: Python src/Python_package/nonstandard.py
+      - name: Run nonstandardcode.py
+        run: python src/awesome_package/nonstandardcode.py
