@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "/home/gerish/miniconda3/envs/myenv/bin/python",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+        "source.organizeImports",
+        "source.formatDocument"
+    ]
+}
