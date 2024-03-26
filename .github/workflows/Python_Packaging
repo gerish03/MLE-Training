@@ -63,4 +63,4 @@ deploy:
               pip install *.whl
 
         - name: Run nonstandardcode.py
-          run: Python src/Python_package
+          run: Python src/Python_package/nonstandard.py
