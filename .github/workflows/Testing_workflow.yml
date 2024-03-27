@@ -3,7 +3,7 @@ name: Testing Workflow
 on:
   pull_request:
     branches:
-      - main
+      - dummy-branches
 
 jobs:
   build_and_test:
@@ -24,7 +24,10 @@ jobs:
           auto-activate-base: false
 
       - name: Install Tree
-        run: sudo apt-get install tree -y
+        run: |
+          pip install setuptools
+          pip install build
+          sudo apt install tree
 
       - name: Display Tree Before Building
         run: tree
