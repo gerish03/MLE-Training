@@ -3,7 +3,7 @@ name: Package Build and Tests
 on:
   pull_request:
     branches:
-      -main
+      - dummy-branches
 
 jobs:
   build_and_test:
@@ -25,9 +25,9 @@ jobs:
           auto-activate-base: false
 
       - name: Run Flake8
-        run: flake8 src/mypackage/nonstandardcode.py
+        run: flake8 src/HousePricePrediction/nonstandardcode.py
 
       - name: Run nonstandardcode.py
         run: |
           pwd
-          python src/mypackage/nonstandardcode.py
+          python src/HousePricePrediction/nonstandardcode.py

@@ -3,7 +3,7 @@ name: Python Packaging Workflow
 on:
   pull_request:
     branches:
-      - main
+      - dummy-branches
 
 jobs:
   build:
@@ -62,4 +62,4 @@ jobs:
           pip install python_package-0.0.1-py3-none-any.whl
 
       - name: Run nonstandardcode.py
-        run: python -m python_package.nonstandardcode
+        run: python -m HousePricePrediction.nonstandardcode
