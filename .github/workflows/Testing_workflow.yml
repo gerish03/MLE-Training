@@ -3,8 +3,7 @@ name: Testing Workflow
 on:
   pull_request:
     branches:
-      - dummy-branches
-
+      - main
 jobs:
   build_and_test:
     name: build and test
