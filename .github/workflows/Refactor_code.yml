@@ -1,0 +1,48 @@
+name: Refactor Code Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -el {0}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Conda Environment
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+            activate-environment: my-env
+            environment-file: deploy/conda/env.yml
+            auto-activate-base: false
+
+      - name: Installing setuptools,build,tree
+        run: |
+            pip install setuptools
+            pip install build
+            sudo apt install tree
+
+      - name: Display Tree Before Building
+        run: tree
+
+      - name: Building the package
+        run: python -m build
+
+      - name: Display Tree After Building
+        run: tree
+
+      - name: Installing the whl
+        run: pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
+
+      - name: Installing pytest
+        run: pip install pytest
+
+      - name: Testing
+        run: pytest
