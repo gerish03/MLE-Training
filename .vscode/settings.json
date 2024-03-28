@@ -1,8 +1,25 @@
 {
-    "python.pythonPath": "/home/gerish/miniconda3/envs/myenv/bin/python",
+    "workbench.colorTheme": "Default Dark Modern",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "isort.check": true,
+    "black-formatter.args": [
+        "--line-length",
+        "79"
+    ],
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.tabSize": 4,
+    },
+    "files.trimTrailingWhitespace": true,
+    "python.defaultInterpreterPath": "/home/gerish/miniconda3/envs/my-env/bin/python",
     "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": [
-        "source.organizeImports",
-        "source.formatDocument"
+    "python.linters.flake8": true,
+    "python.analysis.extraPaths": [
+        "/home/gerish/miniconda3/envs/my-env/lib/python3.12/site-packages"
     ]
 }
