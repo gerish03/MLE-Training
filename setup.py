@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='HousePricePrediction',
+    name='mypackage',
     version='0.0.1',
     install_requires=[
         'requests',
