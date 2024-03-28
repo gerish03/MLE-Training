@@ -19,7 +19,7 @@ jobs:
       - name: Setup Miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
-            activate-environment: mle-dev
+            activate-environment: my-env
             environment-file: deploy/conda/env.yml
             auto-activate-base: false
 
