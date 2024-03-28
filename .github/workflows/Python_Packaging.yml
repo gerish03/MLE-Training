@@ -3,7 +3,7 @@ name: Python Packaging Workflow
 on:
   pull_request:
     branches:
-      - main
+      - dummy branches
 
 jobs:
   build:
