@@ -1,0 +1,50 @@
+name: Testing Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build_and_test:
+    name: build and test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Conda Environment
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: my-env
+          environment-file: deploy/conda/env.yml
+          auto-activate-base: false
+
+      - name: Install Tree
+        run: |
+          pip install setuptools
+          pip install build
+          sudo apt install tree
+
+      - name: Display Tree Before Building
+        run: tree
+
+      - name: Build Package
+        run: |
+          pip install build
+          python -m build
+
+      - name: Display Tree After Building
+        run: tree
+
+      - name: Install whl
+        run: |
+          pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
+
+      - name: Installing Pytest
+        run: pip install pytest
+
+      - name: Testing
+        run: pytest
