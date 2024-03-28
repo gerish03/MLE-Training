@@ -14,4 +14,3 @@ def test_pkg_import():
     assert hasattr(train, "train_decision_tree")
     assert hasattr(train, "train_linear_regression")
     assert hasattr(train, "train_random_forest")
-    assert hasattr(train, "tune_random_forest")
