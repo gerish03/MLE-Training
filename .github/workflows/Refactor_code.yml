@@ -3,7 +3,7 @@ name: Refactor Code Workflow
 on:
   pull_request:
     branches:
-      - main
+      - dummy branches
 
 jobs:
   build-and-test:
