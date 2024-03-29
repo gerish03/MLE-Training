@@ -10,6 +10,7 @@ from HousePricePrediction.ingest_data import fetch_housing_data
 
 
 class TestIngestDataFunctions(unittest.TestCase):
+
     def test_load_housing_data(self):
         csv_path = os.path.join("test_datasets/housing/housing.csv")
         housing = pd.read_csv(csv_path)
