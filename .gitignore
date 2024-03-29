@@ -2,3 +2,5 @@
 *.tgz
 dist/
 *.egg-info/
+*.csv
+*.pkl

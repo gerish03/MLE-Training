@@ -6,19 +6,20 @@ import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import StratifiedShuffleSplit
 
-from HousePricePrediction.ingest_data import fetch_housing_data
+from HousePricePrediction.ingest_data import (fetch_housing_data,
+                                              load_housing_data)
 
 
 class TestIngestDataFunctions(unittest.TestCase):
 
     def test_load_housing_data(self):
-        csv_path = os.path.join("datasets/housing/housing.csv")
-        housing = pd.read_csv(csv_path)
+        csv_path = os.path.join("data/raw/housing.csv")
         fetch_housing_data()
+        housing = load_housing_data()
         self.assertTrue(housing is not None)
 
     def test_prepare_data_for_training(self):
-        csv_path = os.path.join("datasets/housing/housing.csv")
+        csv_path = os.path.join("data/raw/housing.csv")
         housing = pd.read_csv(csv_path)
 
         housing["income_cat"] = pd.cut(
