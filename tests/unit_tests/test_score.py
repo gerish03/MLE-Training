@@ -28,6 +28,7 @@ class TestScoreFunctions(unittest.TestCase):
         mae = mean_absolute_error(self.y_test, predictions)
         self.assertIsInstance(mae, float)
 
+
     def test_RF_score(self):
         for mean_score, params in zip(self.cvres["mean_test_score"], self.cvres["params"]):
             self.assertIsInstance(mean_score, float)
