@@ -1,4 +1,5 @@
 *.pyc
 *.csv
+*.tgz
 dist/
 *.egg-info/
