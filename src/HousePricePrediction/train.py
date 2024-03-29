@@ -36,7 +36,6 @@ def rand_tune_random_forest(X_train, y_train):
         random_state=42,
     )
     rnd_search.fit(X_train, y_train)
-    joblib.dump(rnd_search,"artifacts/rnd_search_model.pkl")
     return rnd_search
 
 
@@ -58,5 +57,4 @@ def grid_tune_random_forest(X_train, y_train):
         return_train_score=True,
     )
     grid_search.fit(X_train, y_train)
-    joblib.dump(grid_search,"artifacts/grid_search_model.pkl")
     return grid_search
