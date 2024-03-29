@@ -1,100 +1,51 @@
 import os
 import unittest
 
-import numpy as np
 import pandas as pd
-from sklearn.impute import SimpleImputer
-from sklearn.model_selection import StratifiedShuffleSplit
 
-from HousePricePrediction.ingest_data import fetch_housing_data
+from HousePricePrediction.ingest_data import (fetch_housing_data,
+                                              load_housing_data,
+                                              prepare_data_for_training)
 
 
-class TestIngestDataFunctions(unittest.TestCase):
+class TestIngestData(unittest.TestCase):
+    def setUp(self):
+        self.raw_path = "data/raw"
+        self.processed_path = "data/processed"
+
+    def test_fetch_housing_data(self):
+        try:
+            # Test fetch_housing_data function
+            fetch_housing_data(raw_path=self.raw_path)
+            self.assertTrue(os.path.exists(os.path.join(self.raw_path, "housing.csv")))
+        except Exception as e:
+            self.fail(f"fetch_housing_data raised an exception: {e}")
 
     def test_load_housing_data(self):
-        csv_path = os.path.join("datasets/housing/housing.csv")
-        housing = pd.read_csv(csv_path)
-        fetch_housing_data()
-        self.assertTrue(housing is not None)
+        try:
+            # Test load_housing_data function
+            housing_data = load_housing_data(raw_path=self.raw_path)
+            self.assertIsInstance(housing_data, pd.DataFrame)
+        except Exception as e:
+            self.fail(f"load_housing_data raised an exception: {e}")
 
     def test_prepare_data_for_training(self):
-        csv_path = os.path.join("datasets/housing/housing.csv")
-        housing = pd.read_csv(csv_path)
+        try:
+            # Load housing data
+            housing_data = load_housing_data(raw_path=self.raw_path)
+            # Test prepare_data_for_training function
+            X_train, X_test, y_train, y_test = prepare_data_for_training(housing_data, processed_path=self.processed_path)
 
-        housing["income_cat"] = pd.cut(
-            housing["median_income"],
-            bins=[0.0, 1.5, 3.0, 4.5, 6.0, np.inf],
-            labels=[1, 2, 3, 4, 5],
-        )
-
-        split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
-        for train_index, test_index in split.split(housing, housing["income_cat"]):
-            strat_train_set = housing.loc[train_index]
-            strat_test_set = housing.loc[test_index]
-
-        for set_ in (strat_train_set, strat_test_set):
-            set_.drop("income_cat", axis=1, inplace=True)
-
-        X_train = strat_train_set.drop("median_house_value", axis=1)
-        y_train = strat_train_set["median_house_value"].copy()
-
-        imputer = SimpleImputer(strategy="median")
-
-        housing_num = X_train.drop("ocean_proximity", axis=1)
-
-        imputer.fit(housing_num)
-        X = imputer.transform(housing_num)
-
-        housing_tr = pd.DataFrame(
-            X, columns=housing_num.columns, index=X_train.index
-        )
-
-        housing_tr["rooms_per_household"] = (
-            housing_tr["total_rooms"] / housing_tr["households"]
-        )
-
-        housing_tr["bedrooms_per_room"] = (
-            housing_tr["total_bedrooms"] / housing_tr["total_rooms"]
-        )
-
-        housing_tr["population_per_household"] = (
-            housing_tr["population"] / housing_tr["households"]
-        )
-
-        housing_cat = X_train[["ocean_proximity"]]
-        X_train_prepared = housing_tr.join(
-            pd.get_dummies(housing_cat, drop_first=True)
-        )
-
-        X_test = strat_test_set.drop("median_house_value", axis=1)
-        y_test = strat_test_set["median_house_value"].copy()
-
-        X_test_num = X_test.drop("ocean_proximity", axis=1)
-        X_test_prepared = imputer.transform(X_test_num)
-        X_test_prepared = pd.DataFrame(
-            X_test_prepared, columns=X_test_num.columns, index=X_test.index
-        )
-
-        X_test_prepared["rooms_per_household"] = (
-            X_test_prepared["total_rooms"] / X_test_prepared["households"]
-        )
-
-        X_test_prepared["bedrooms_per_room"] = (
-            X_test_prepared["total_bedrooms"] / X_test_prepared["total_rooms"]
-        )
-        X_test_prepared["population_per_household"] = (
-            X_test_prepared["population"] / X_test_prepared["households"]
-        )
-
-        X_test_cat = X_test[["ocean_proximity"]]
-        X_test_prepared = X_test_prepared.join(
-            pd.get_dummies(X_test_cat, drop_first=True)
-        )
-
-        self.assertTrue(X_train_prepared is not None)
-        self.assertTrue(X_test_prepared is not None)
-        self.assertTrue(y_train is not None)
-        self.assertTrue(y_test is not None)
+            self.assertIsInstance(X_train, pd.DataFrame)
+            self.assertIsInstance(X_test, pd.DataFrame)
+            self.assertIsInstance(y_train, pd.Series)
+            self.assertIsInstance(y_test, pd.Series)
+            self.assertTrue(os.path.exists(os.path.join(self.processed_path, "train_raw.csv")))
+            self.assertTrue(os.path.exists(os.path.join(self.processed_path, "test_raw.csv")))
+            self.assertTrue(os.path.exists(os.path.join(self.processed_path, "train_processed.csv")))
+            self.assertTrue(os.path.exists(os.path.join(self.processed_path, "test_processed.csv")))
+        except Exception as e:
+            self.fail(f"prepare_data_for_training raised an exception: {e}")
 
 if __name__ == '__main__':
     unittest.main()
