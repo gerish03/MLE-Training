@@ -8,7 +8,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.model_selection import StratifiedShuffleSplit
 
 DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml/master/"
-HOUSING_PATH = os.path.join("datasets", "housing")
+HOUSING_PATH = os.path.join("data", "raw")
 HOUSING_URL = DOWNLOAD_ROOT + "datasets/housing/housing.tgz"
 
 
@@ -92,5 +92,15 @@ def prepare_data_for_training(housing):
     X_test_prepared = X_test_prepared.join(
         pd.get_dummies(X_test_cat, drop_first=True)
     )
+
+    PROCESSED_DIR = "data/processed"
+    X_train_prepared_path = os.path.join(PROCESSED_DIR, "X_train_prepared.csv")
+    X_test_prepared_path = os.path.join(PROCESSED_DIR, "X_test_prepared.csv")
+    y_train_path = os.path.join(PROCESSED_DIR, "y_train.csv")
+    y_test_path = os.path.join(PROCESSED_DIR, "y_test.csv")
+    X_train_prepared.to_csv(X_train_prepared_path, index=False)
+    X_test_prepared.to_csv(X_test_prepared_path, index=False)
+    y_train.to_csv(y_train_path, index=False)
+    y_test.to_csv(y_test_path, index=False)
 
     return X_train_prepared, X_test_prepared, y_train, y_test
