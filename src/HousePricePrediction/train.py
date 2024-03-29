@@ -1,3 +1,4 @@
+import joblib
 from scipy.stats import randint
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
@@ -8,12 +9,14 @@ from sklearn.tree import DecisionTreeRegressor
 def train_linear_regression(X_train, y_train):
     lin_reg = LinearRegression()
     lin_reg.fit(X_train, y_train)
+    joblib.dump(lin_reg,"artifacts/lin_reg_model.pkl")
     return lin_reg
 
 
 def train_decision_tree(X_train, y_train):
     tree_reg = DecisionTreeRegressor(random_state=42)
     tree_reg.fit(X_train, y_train)
+    joblib.dump(tree_reg,"artifacts/tree_reg_model.pkl")
     return tree_reg
 
 
@@ -22,7 +25,6 @@ def rand_tune_random_forest(X_train, y_train):
         "n_estimators": randint(low=1, high=200),
         "max_features": randint(low=1, high=8),
     }
-
     forest_reg = RandomForestRegressor(random_state=42)
     rnd_search = RandomizedSearchCV(
         forest_reg,
@@ -33,6 +35,7 @@ def rand_tune_random_forest(X_train, y_train):
         random_state=42,
     )
     rnd_search.fit(X_train, y_train)
+    joblib.dump(rnd_search,"artifacts/rnd_search_model.pkl")
     return rnd_search
 
 
@@ -54,4 +57,5 @@ def grid_tune_random_forest(X_train, y_train):
         return_train_score=True,
     )
     grid_search.fit(X_train, y_train)
+    joblib.dump(grid_search,"artifacts/grid_search_model.pkl")
     return grid_search
