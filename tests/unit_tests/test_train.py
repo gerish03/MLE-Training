@@ -14,6 +14,7 @@ from HousePricePrediction.train import (grid_tune_random_forest,
 
 
 class TestTrainFunctions(unittest.TestCase):
+
     def setUp(self):
         np.random.seed(0)
         self.X_train = np.random.rand(100, 10)
