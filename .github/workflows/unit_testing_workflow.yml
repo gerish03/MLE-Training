@@ -1,4 +1,4 @@
-name: Build Package and Run Tests
+name: unit-testing
 
 on:
   pull_request:
@@ -6,48 +6,36 @@ on:
       - main
 
 jobs:
-  build_and_test:
-    name: build and test
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -el {0}
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+    unitTest:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          shell: bash -el {0}
 
-      - name: Setup Conda Environment
-        uses: conda-incubator/setup-miniconda@v3
-        with:
-          activate-environment: my-env
-          environment-file: deploy/conda/env.yml
-          auto-activate-base: false
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
 
-      - name: Install Tree
-        run: |
-          pip install setuptools
-          pip install build
-          sudo apt install tree
+        - name: Set up Miniconda
+          uses: conda-incubator/setup-miniconda@v2
+          with:
+            activate-environment: my-env
+            environment-file: deploy/conda/env.yml
+            auto-activate-base: false
 
-      - name: Display Tree After Building
-        run: tree
+        - name: install tree cli tool
+          run: |
+            sudo apt-get install tree
 
-      - name: Install Package in Dev Mode
-        run: pip install -e
+        - name: Display the directory tree After building
+          run: |
+            tree .
 
-      - name: Installing Pytest
-        run: pip install pytest
+        - name: install the package
+          run: |
+            pip install -e .
+            pip install -U pytest
 
-      - name: Run Tests
-        run: pytest
-        continue-on-error: true
-
-      - name: Fail Workflow on Test Failures
-        run: |
-          if [ $? -eq 0 ]; then
-            echo "All tests passed!"
-            exit 0
-          else
-            echo "Some tests failed. Exiting with failure status."
-            exit 1
-          fi
+        - name: test using pytest
+          run: |
+            pytest
