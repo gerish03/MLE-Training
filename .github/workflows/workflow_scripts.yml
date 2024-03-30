@@ -28,7 +28,7 @@ jobs:
       - name: Install package in dev mode
         run: pip install -e .
 
-      - name: Install Tree
+      - name: Install
         run: |
           pip install setuptools
           pip install build
@@ -40,12 +40,16 @@ jobs:
         run: |
           pytest tests/unit_tests/test_ingest_data.py
           pytest tests/unit_tests/test_score.py
-          pytest tests/functional_tests/test_package.py
+          pytest tests/unit_tests/test_train.py
 
   build_job:
     runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -el {0}
     needs: unit_test_job
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -58,13 +62,14 @@ jobs:
 
       - name: Build the package
         run: |
+          pip install -e
           pip install build
           python -m build
 
       - name: Installing whl
         run: pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
 
-      - name: Install Tree
+      - name: Install
         run: |
           pip install setuptools
           pip install build
@@ -73,7 +78,7 @@ jobs:
         run: pip install pytest
 
       - name: Run test
-        run: pytest
+        run: pytest tests/functional_tests/test_package.py
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v2
@@ -116,5 +121,3 @@ jobs:
           python script/ingest_data.py data/processed
           python script/train.py data/raw artifacts
           python script/score.py artifacts data/raw
-
-
