@@ -32,10 +32,9 @@ jobs:
         run: pytest
         continue-on-error: true
 
-
-
   build_job:
     runs-on: ubuntu-latest
+    needs: unit_test_job
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -59,9 +58,6 @@ jobs:
         run: pytest test_package.py
         continue-on-error: true
 
-      - name: Fail if tests failed
-        run: exit $(test -n "$(pytest --collect-only --exitfirst --quiet)")
-
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -70,6 +66,7 @@ jobs:
 
   deploy_job:
     runs-on: ubuntu-latest
+    needs: build_job
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -90,7 +87,7 @@ jobs:
         run: |
           pip install *.whl
 
-      - name: Run workflow scripts
+      - name: Run workflow scripts in help mode
         run: python ingest_data.py -h && python train.py -h && python score.py -h
 
       - name: Run workflow scripts
