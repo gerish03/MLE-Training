@@ -30,9 +30,7 @@ jobs:
 
       - name: Run unit tests
         run: |
-          pytest tests/unit_tests/test_ingest_data.py
-          pytest tests/unit_tests/test_score.py
-          pytest tests/unit_tests/test_train.py
+          pytest tests/functional_tests_test_package.py
 
   build_job:
     runs-on: ubuntu-latest
