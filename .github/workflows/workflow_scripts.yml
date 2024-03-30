@@ -29,8 +29,10 @@ jobs:
         run: pip install -e .
 
       - name: Run unit tests
-        run: pytest
-        continue-on-error: true
+        run: |
+          pytest tests/unit_tests/test_ingest_data.py
+          pytest tests/unit_tests/test_score.py
+          pytest tests/unit_tests/test_train.py
 
   build_job:
     runs-on: ubuntu-latest
@@ -54,9 +56,8 @@ jobs:
       - name: Installing whl
         run: pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
 
-      - name: Run installation tests
-        run: pytest test_package.py
-        continue-on-error: true
+      - name: Run test
+        run: pytest
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v2
@@ -85,10 +86,19 @@ jobs:
 
       - name: Install Package
         run: |
+          pip install build
           pip install *.whl
 
       - name: Run workflow scripts in help mode
-        run: python ingest_data.py -h && python train.py -h && python score.py -h
+        run: |
+          python script/ingest_data.py -h
+          python script/train.py -h
+          python script/score.py -h
 
       - name: Run workflow scripts
-        run: python ingest_data.py && python train.py && python score.py
+        run: |
+          python script/ingest_data.py data/processed
+          python script/train.py data/raw artifacts
+          python script/score.py artifacts data/raw
+
+
