@@ -28,11 +28,18 @@ jobs:
       - name: Install package in dev mode
         run: pip install -e .
 
+      - name: Install Tree
+        run: |
+          pip install setuptools
+          pip install build
+
       - name: Installing Pytest
         run: pip install pytest
 
       - name: Run unit tests
         run: |
+          pytest tests/unit_tests/test_ingest_data.py
+          pytest tests/unit_tests/test_score.py
           pytest tests/functional_tests/test_package.py
 
   build_job:
@@ -56,6 +63,11 @@ jobs:
 
       - name: Installing whl
         run: pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
+
+      - name: Install Tree
+        run: |
+          pip install setuptools
+          pip install build
 
       - name: Installing Pytest
         run: pip install pytest
