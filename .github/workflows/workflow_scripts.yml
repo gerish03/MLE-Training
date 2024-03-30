@@ -86,7 +86,6 @@ jobs:
 
   deploy_job:
     runs-on: ubuntu-latest
-    needs: build_job
     defaults:
         run:
           shell: bash -el {0}
@@ -118,7 +117,7 @@ jobs:
       - name: Install
         run: pip install setuptools
 
-        - name: Run workflow scripts in help mode
+      - name: Run workflow scripts in help mode
         run: |
           python script/ingest_data.py -h
           python script/train.py -h
