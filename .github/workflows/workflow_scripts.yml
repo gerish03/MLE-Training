@@ -90,7 +90,7 @@ jobs:
         run: |
           pip install *.whl
 
-      - name: Run workflow scripts in help mode
+      - name: Run workflow scripts
         run: python ingest_data.py -h && python train.py -h && python score.py -h
 
       - name: Run workflow scripts
