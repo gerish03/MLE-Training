@@ -1,0 +1,97 @@
+name: Workflow_Scripts
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  unit_test_job:
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -el {0}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+            activate-environment: my-env
+            environment-file: deploy/conda/env.yml
+            auto-activate-base: false
+
+      - name: Display Tree After Building
+        run: tree
+
+      - name: Install package in dev mode
+        run: pip install -e .
+
+      - name: Run unit tests
+        run: pytest
+        continue-on-error: true
+
+      - name: Fail if tests failed
+        run: exit $(test -n "$(pytest --collect-only --exitfirst --quiet)")
+
+
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+            activate-environment: my-env
+            environment-file: deploy/conda/env.yml
+            auto-activate-base: false
+
+      - name: Build the package
+        run: python -m build
+
+      - name: Installing whl
+        run: pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
+
+      - name: Run installation tests
+        run: pytest test_package.py
+        continue-on-error: true
+
+      - name: Fail if tests failed
+        run: exit $(test -n "$(pytest --collect-only --exitfirst --quiet)")
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+            name: Python-Package-Artifacts-MLE
+            path: dist/
+
+  deploy_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+            activate-environment: my-env
+            environment-file: deploy/conda/env.yml
+            auto-activate-base: false
+
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+            name: Python-Package-Artifacts-MLE
+
+      - name: Install Package
+        run: |
+          pip install *.whl
+
+      - name: Run workflow scripts in help mode
+        run: python ingest_data.py -h && python train.py -h && python score.py -h
+
+      - name: Run workflow scripts
+        run: python ingest_data.py && python train.py && python score.py

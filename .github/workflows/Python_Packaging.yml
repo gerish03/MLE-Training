@@ -13,7 +13,7 @@ jobs:
         shell: bash -el {0}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install Tree
         run: sudo apt-get install tree -y
@@ -43,7 +43,7 @@ jobs:
     needs: build
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Conda Environment
         uses: conda-incubator/setup-miniconda@v2
