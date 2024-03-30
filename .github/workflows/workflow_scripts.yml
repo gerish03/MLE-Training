@@ -28,9 +28,12 @@ jobs:
       - name: Install package in dev mode
         run: pip install -e .
 
+      - name: Installing Pytest
+        run: pip install pytest
+
       - name: Run unit tests
         run: |
-          pytest tests/functional_tests_test_package.py
+          pytest tests/functional_tests/test_package.py
 
   build_job:
     runs-on: ubuntu-latest
@@ -53,6 +56,9 @@ jobs:
 
       - name: Installing whl
         run: pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
+
+      - name: Installing Pytest
+        run: pip install pytest
 
       - name: Run test
         run: pytest
