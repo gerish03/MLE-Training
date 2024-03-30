@@ -7,25 +7,28 @@ import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import StratifiedShuffleSplit
 
+DATA_PATH = "data"
+RAW_PATH = os.path.join(DATA_PATH, "raw")
+PROCESSED_PATH = os.path.join(DATA_PATH, "processed")
 DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml/master/"
-HOUSING_PATH = os.path.join("data", "raw")
 HOUSING_URL = DOWNLOAD_ROOT + "datasets/housing/housing.tgz"
 
-def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
-    os.makedirs(housing_path, exist_ok=True)
-    tgz_path = os.path.join(housing_path, "housing.tgz")
+
+def fetch_housing_data(housing_url=HOUSING_URL, raw_path=RAW_PATH):
+    os.makedirs(raw_path, exist_ok=True)
+    tgz_path = os.path.join(raw_path, "housing.tgz")
     urllib.request.urlretrieve(housing_url, tgz_path)
     housing_tgz = tarfile.open(tgz_path)
-    housing_tgz.extractall(path=housing_path)
+    housing_tgz.extractall(path=raw_path)
     housing_tgz.close()
 
 
-def load_housing_data(housing_path=HOUSING_PATH):
-    csv_path = os.path.join(housing_path, "housing.csv")
+def load_housing_data(raw_path=RAW_PATH):
+    csv_path = os.path.join(raw_path, "housing.csv")
     return pd.read_csv(csv_path)
 
 
-def prepare_data_for_training(housing):
+def prepare_data_for_training(housing, processed_path=PROCESSED_PATH):
     housing["income_cat"] = pd.cut(
         housing["median_income"],
         bins=[0.0, 1.5, 3.0, 4.5, 6.0, np.inf],
@@ -40,13 +43,18 @@ def prepare_data_for_training(housing):
     for set_ in (strat_train_set, strat_test_set):
         set_.drop("income_cat", axis=1, inplace=True)
 
+    os.makedirs(processed_path, exist_ok=True)
+
+    train_raw_path = os.path.join(processed_path, "train_raw.csv")
+    strat_train_set.to_csv(train_raw_path, index=False)
+    test_raw_path = os.path.join(processed_path, "test_raw.csv")
+    strat_test_set.to_csv(test_raw_path, index=False)
+
     X_train = strat_train_set.drop("median_house_value", axis=1)
     y_train = strat_train_set["median_house_value"].copy()
 
     imputer = SimpleImputer(strategy="median")
-
     housing_num = X_train.drop("ocean_proximity", axis=1)
-
     imputer.fit(housing_num)
     X = imputer.transform(housing_num)
 
@@ -68,6 +76,9 @@ def prepare_data_for_training(housing):
     X_train_prepared = housing_tr.join(
         pd.get_dummies(housing_cat, drop_first=True)
     )
+
+    train_processed_path = os.path.join(processed_path, "train_processed.csv")
+    X_train_prepared.to_csv(train_processed_path, index=False)
 
     X_test = strat_test_set.drop("median_house_value", axis=1)
     y_test = strat_test_set["median_house_value"].copy()
@@ -92,14 +103,7 @@ def prepare_data_for_training(housing):
         pd.get_dummies(X_test_cat, drop_first=True)
     )
 
-    PROCESSED_DIR = "data/processed"
-    X_train_prepared_path = os.path.join(PROCESSED_DIR, "X_train_prepared.csv")
-    X_test_prepared_path = os.path.join(PROCESSED_DIR, "X_test_prepared.csv")
-    y_train_path = os.path.join(PROCESSED_DIR, "y_train.csv")
-    y_test_path = os.path.join(PROCESSED_DIR, "y_test.csv")
-    X_train_prepared.to_csv(X_train_prepared_path, index=False)
-    X_test_prepared.to_csv(X_test_prepared_path, index=False)
-    y_train.to_csv(y_train_path, index=False)
-    y_test.to_csv(y_test_path, index=False)
+    test_processed_path = os.path.join(processed_path, "test_processed.csv")
+    X_test_prepared.to_csv(test_processed_path, index=False)
 
     return X_train_prepared, X_test_prepared, y_train, y_test

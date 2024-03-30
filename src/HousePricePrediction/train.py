@@ -25,6 +25,7 @@ def rand_tune_random_forest(X_train, y_train):
         "n_estimators": randint(low=1, high=200),
         "max_features": randint(low=1, high=8),
     }
+
     forest_reg = RandomForestRegressor(random_state=42)
     rnd_search = RandomizedSearchCV(
         forest_reg,
