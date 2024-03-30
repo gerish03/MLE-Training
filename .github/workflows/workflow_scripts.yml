@@ -108,7 +108,10 @@ jobs:
       - name: Install Package
         run: |
           pip install build
-          pip install *.whl
+          python -m build
+
+      - name: Installing whl
+        run: pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
 
       - name: Run workflow scripts in help mode
         run: |
