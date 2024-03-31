@@ -16,17 +16,20 @@ def train_decision_tree(X_train, y_train):
     tree_reg.fit(X_train, y_train)
     return tree_reg
 
-
 def rand_tune_random_forest(X_train, y_train):
-    param_distribs = {
-        "n_estimators": randint(low=1, high=200),
-        "max_features": randint(low=1, high=8),
-    }
+    param_grid = [
+        {"n_estimators": [3, 10, 30], "max_features": [1, 2, 3, 4, 5]},
+        {
+            "bootstrap": [False],
+            "n_estimators": [3, 10],
+            "max_features": [1, 2, 3, 4, 5],
+        },
+    ]
 
     forest_reg = RandomForestRegressor(random_state=42)
     rnd_search = RandomizedSearchCV(
         forest_reg,
-        param_distributions=param_distribs,
+        param_distributions=param_grid,
         n_iter=10,
         cv=5,
         scoring="neg_mean_squared_error",
@@ -36,15 +39,16 @@ def rand_tune_random_forest(X_train, y_train):
     return rnd_search
 
 
+
 def grid_tune_random_forest(X_train, y_train):
     param_grid = [
-        {"n_estimators": [3, 10, 30], "max_features": [2, 4, 6, 8]},
-        {
-            "bootstrap": [False],
-            "n_estimators": [3, 10],
-            "max_features": [2, 3, 4],
-        },
-    ]
+    {"n_estimators": [3, 10, 30], "max_features": [1, 2, 3, 4, 5]},
+    {
+        "bootstrap": [False],
+        "n_estimators": [3, 10],
+        "max_features": [1, 2, 3, 4, 5],
+    },
+]
     forest_reg = RandomForestRegressor(random_state=42)
     grid_search = GridSearchCV(
         forest_reg,

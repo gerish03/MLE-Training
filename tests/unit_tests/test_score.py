@@ -1,36 +1,45 @@
-import os
 import unittest
-from unittest.mock import patch
 
-from HousePricePrediction.score import RF_score, save_metrics
+import numpy as np
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+from HousePricePrediction.score import score_model_mae, score_model_rmse
 
 
-class TestScoreFunctions(unittest.TestCase):
-
+class TestModelScoring(unittest.TestCase):
     def setUp(self):
-        self.model_name = "test_model"
-        self.score_type = "RMSE"
-        self.score = 0.0
+        self.X_test = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+        self.y_test = np.array([10, 20, 30])
 
-    def test_save_metrics(self):
-        save_metrics(self.model_name, self.score_type, self.score)
-        filename = f"artifacts/metrics/{self.model_name}_{self.score_type}.txt"
-        assert os.path.exists(filename), f"File {filename} was not created."
+    def test_score_model_rmse(self):
+        try:
 
-    @patch("builtins.print")
-    def test_RF_score(self, mock_print):
+            class MockModel:
+                def predict(self, X):
+                    return np.array([11, 22, 33])
 
-        cvres = {
-            "mean_test_score": [-100, -200],
-            "params": [{"param1": 1}, {"param2": 2}],
-        }
-        mock_model = type("MockModel", (), {})
-        RF_score(cvres, mock_model)
-        filename = f"artifacts/metrics/{type(mock_model).__name__}_RMSE.txt"
-        assert os.path.exists(filename), f"File {filename} was not created."
-        assert (
-            mock_print.call_count == 2
-        ), "Print function was not called twice."
+            model = MockModel()
+            rmse = score_model_rmse(model, self.X_test, self.y_test)
+            expected_rmse = np.sqrt(
+                mean_squared_error(self.y_test, [11, 22, 33])
+            )
+            self.assertAlmostEqual(rmse, expected_rmse)
+        except Exception as e:
+            self.fail(f"Unexpected error occurred during RMSE scoring: {e}")
+
+    def test_score_model_mae(self):
+        try:
+
+            class MockModel:
+                def predict(self, X):
+                    return np.array([11, 22, 33])
+
+            model = MockModel()
+            mae = score_model_mae(model, self.X_test, self.y_test)
+            expected_mae = mean_absolute_error(self.y_test, [11, 22, 33])
+            self.assertAlmostEqual(mae, expected_mae)
+        except Exception as e:
+            self.fail(f"Unexpected error occurred during MAE scoring: {e}")
 
 
 if __name__ == "__main__":

@@ -2,6 +2,10 @@ import unittest
 
 import numpy as np
 from sklearn.datasets import make_regression
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import (GridSearchCV, RandomizedSearchCV,
+                                     train_test_split)
+from sklearn.tree import DecisionTreeRegressor
 
 from HousePricePrediction.train import (grid_tune_random_forest,
                                         rand_tune_random_forest,
@@ -9,56 +13,94 @@ from HousePricePrediction.train import (grid_tune_random_forest,
                                         train_linear_regression)
 
 
-class TestTrainFunctions(unittest.TestCase):
-
+class TestModelTraining(unittest.TestCase):
     def setUp(self):
-        # Generate sample data for testing
-        self.X_train, self.y_train = make_regression(
-            n_samples=100, n_features=10, noise=0.1, random_state=42
+        self.X, self.y = make_regression(
+            n_samples=100, n_features=5, noise=0.1, random_state=42
+        )
+        self.X_train, self.X_test, self.y_train, self.y_test = (
+            train_test_split(self.X, self.y, test_size=0.2, random_state=42)
         )
 
     def test_train_linear_regression(self):
         try:
-            lin_reg_model = train_linear_regression(self.X_train, self.y_train)
-            self.assertIsNotNone(lin_reg_model)
-            # Add more specific tests if needed
-        except Exception as e:
-            self.fail(
-                f"train_linear_regression raised an unexpected exception: {e}"
+            model = train_linear_regression(self.X_train, self.y_train)
+            self.assertIsInstance(
+                model,
+                LinearRegression,
+                "The trained model is not an instance of LinearRegression",
             )
+            self.assertTrue(
+                np.any(model.coef_), "The trained model coefficients are empty"
+            )
+            y_pred = model.predict(self.X_test)
+            self.assertIsNotNone(
+                y_pred, "Failed to make predictions using the trained model"
+            )
+        except Exception as e:
+            self.fail(f"Error occurred during linear regression training: {e}")
 
     def test_train_decision_tree(self):
         try:
-            tree_reg_model = train_decision_tree(self.X_train, self.y_train)
-            self.assertIsNotNone(tree_reg_model)
-            # Add more specific tests if needed
+            model = train_decision_tree(self.X_train, self.y_train)
+            self.assertIsInstance(
+                model,
+                DecisionTreeRegressor,
+                "The model is not an instance of DecisionTreeRegressor",
+            )
+            self.assertTrue(
+                model.tree_.node_count > 1,
+                "The decision tree model has an insufficient number of nodes",
+            )
+            y_pred = model.predict(self.X_test)
+            self.assertIsNotNone(
+                y_pred, "Failed to make predictions using the trained model"
+            )
         except Exception as e:
             self.fail(
-                f"train_decision_tree raised an unexpected exception: {e}"
+                f"Unexpected error occurred during decision tree training: {e}"
             )
 
     def test_rand_tune_random_forest(self):
         try:
-            rnd_search_model = rand_tune_random_forest(
-                self.X_train, self.y_train
+            model = rand_tune_random_forest(self.X_train, self.y_train)
+            self.assertIsInstance(
+                model,
+                RandomizedSearchCV,
+                "The model is not an instance of RandomizedSearchCV",
             )
-            self.assertIsNotNone(rnd_search_model)
-            # Add more specific tests if needed
+            self.assertTrue(
+                hasattr(model, "best_estimator_"),
+                "Randomized search did not find the best estimator",
+            )
+            y_pred = model.predict(self.X_test)
+            self.assertIsNotNone(
+                y_pred, "Failed to make predictions using the tuned model"
+            )
         except Exception as e:
             self.fail(
-                f"rand_tune_random_forest raised an unexpected exception: {e}"
+                f"Unexpected error occurred during random forest tuning: {e}"
             )
 
     def test_grid_tune_random_forest(self):
         try:
-            grid_search_model = grid_tune_random_forest(
-                self.X_train, self.y_train
+            model = grid_tune_random_forest(self.X_train, self.y_train)
+            self.assertIsInstance(
+                model,
+                GridSearchCV,
+                "The model is not an instance of GridSearchCV",
             )
-            self.assertIsNotNone(grid_search_model)
-            # Add more specific tests if needed
+            self.assertTrue(
+                hasattr(model, "best_estimator_"),
+                "Grid search did not find the best estimator",
+            )
+            y_pred = model.predict(self.X_test)
+            self.assertIsNotNone(
+                y_pred, "Failed to make predictions using the tuned model"
+            )
         except Exception as e:
             self.fail(
-                f"grid_tune_random_forest raised an unexpected exception: {e}"
+                f"Unexpected error occurred during random forest tuning: {e}"
             )
 
 
