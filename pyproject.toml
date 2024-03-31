@@ -5,3 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "HousePricePrediction"
 version = "0.0.1"
+
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
