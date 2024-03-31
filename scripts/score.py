@@ -74,6 +74,13 @@ def scoring(processed_dataset_path, ml_model_path, scoring_path):
         final_score = score_model_rmse(final_model, X_test, y_test)
         f.write("Final model RMSE on the test set: {}\n".format(final_score))
 
+    # Display the content of each metrics file
+    for filename in os.listdir(scoring_path):
+        with open(os.path.join(scoring_path, filename), "r") as f:
+            print(f"Contents of {filename}:")
+            print(f.read())
+            print()
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
