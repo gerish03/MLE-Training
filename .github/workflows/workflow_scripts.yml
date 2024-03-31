@@ -119,12 +119,15 @@ jobs:
 
       - name: Run workflow scripts in help mode
         run: |
-          python script/ingest_data.py -h
-          python script/train.py -h
-          python script/score.py -h
+          python scripts/ingest_data.py -h
+          python scripts/train.py -h
+          python scripts/score.py -h
 
       - name: Run workflow scripts
         run: |
-          python script/ingest_data.py data/processed
-          python script/train.py data/raw artifacts
-          python script/score.py artifacts data/raw
+          python scripts/ingest_data.py data/raw data/processed
+          python scripts/train.py data/processed artifacts/models
+          python scripts/score.py data/processed artifacts/models artifacts/metrics
+
+      - name: Display
+        run: tree
