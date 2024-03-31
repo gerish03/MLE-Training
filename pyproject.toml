@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "HousePricePrediction"
 version = "0.0.1"
 
+[tool.pytest.ini_options]
 filterwarnings = [
     "ignore::DeprecationWarning",
 ]
