@@ -106,7 +106,7 @@ jobs:
         with:
             name: Python-Package-Artifacts-MLE
 
-      - name: Build Package
+      - name: Building Package
         run: |
           pip install build
           python -m build
