@@ -3,7 +3,7 @@ name: Logging_Workflow
 on:
   pull_request:
     branches:
-      - main
+      - dummy branches
 
 jobs:
   unit_test_job:
