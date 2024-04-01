@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 def setup_logging(logger_name, log_level, log_path, console_log=True):
     logger = logging.getLogger(logger_name)
     logger.setLevel(log_level)
-    formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
     if log_path:
         log_directory, log_file = os.path.split(log_path)
