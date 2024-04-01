@@ -10,6 +10,9 @@ from sklearn.model_selection import StratifiedShuffleSplit
 
 from HousePricePrediction.logger import setup_logging
 
+logger = logging.getLogger(__name__)
+
+
 logger = setup_logging(__name__, logging.INFO, "logs/Script_output.log", console_log=True)
 logger.info("Executing ingest_data module...")
 

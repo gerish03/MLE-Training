@@ -6,6 +6,9 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 from HousePricePrediction.logger import setup_logging
 
+logger = logging.getLogger(__name__)
+
+
 logger = setup_logging(__name__, logging.INFO, "logs/Script_output.log", console_log=True)
 logger.info("Executing score module...")
 

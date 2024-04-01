@@ -1,6 +1,8 @@
 import logging
 import os
 
+logger = logging.getLogger(__name__)
+
 
 def setup_logging(logger_name, log_level, log_path, console_log=True):
     logger = logging.getLogger(logger_name)
