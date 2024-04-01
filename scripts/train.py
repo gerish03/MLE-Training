@@ -1,5 +1,4 @@
 import argparse
-import logging
 import os
 
 import pandas as pd
@@ -10,8 +9,6 @@ from HousePricePrediction.train import (grid_tune_random_forest,
                                         rand_tune_random_forest,
                                         train_decision_tree,
                                         train_linear_regression)
-
-logger = setup_logging(__name__, logging.INFO, "train.log", console_log=True)
 
 
 def training_model(processed_dataset_path, ml_model_path, logger):
