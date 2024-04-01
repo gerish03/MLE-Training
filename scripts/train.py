@@ -5,45 +5,16 @@ import os
 import pandas as pd
 from joblib import dump
 
+from HousePricePrediction.logger import setup_logging
 from HousePricePrediction.train import (grid_tune_random_forest,
                                         rand_tune_random_forest,
                                         train_decision_tree,
                                         train_linear_regression)
 
-# Configure logging
-logger = logging.getLogger("script")
-logger.setLevel(logging.DEBUG)
-formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-
-# Define console handler
-console_handler = logging.StreamHandler()
-console_handler.setFormatter(formatter)
-logger.addHandler(console_handler)
+logger = setup_logging(__name__, logging.INFO, "train.log", console_log=True)
 
 
-def setup_logging(log_level, log_path, console_log):
-    numeric_level = getattr(logging, log_level.upper(), None)
-    if not isinstance(numeric_level, int):
-        raise ValueError("Invalid log level: %s" % log_level)
-    logger.setLevel(numeric_level)
-
-    if log_path:
-        log_directory, log_file = os.path.split(log_path)
-        if not log_directory:
-            log_directory = "."
-        os.makedirs(log_directory, exist_ok=True)
-        if not log_file:
-            log_file = "logfile.log"
-        log_file_path = os.path.join(log_directory, log_file)
-        file_handler = logging.FileHandler(log_file_path)
-        file_handler.setFormatter(formatter)
-        logger.addHandler(file_handler)
-
-    if not console_log:
-        logger.removeHandler(console_handler)
-
-
-def training_model(processed_dataset_path, ml_model_path):
+def training_model(processed_dataset_path, ml_model_path, logger):
     logger.info("Starting model training...")
     os.makedirs(ml_model_path, exist_ok=True)
     X_train_path = os.path.join(processed_dataset_path, "X_train.csv")
@@ -87,6 +58,7 @@ def training_model(processed_dataset_path, ml_model_path):
 
     logger.info("Training completed and models saved to %s", ml_model_path)
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Making ML model and Storing")
     parser.add_argument(
@@ -114,5 +86,5 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    setup_logging(args.log_level, args.log_path, not args.no_console_log)
-    training_model(args.processed_dataset_path, args.ml_model_path)
+    logger = setup_logging("train", args.log_level, args.log_path, not args.no_console_log)
+    training_model(args.processed_dataset_path, args.ml_model_path, logger)

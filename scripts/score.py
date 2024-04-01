@@ -6,40 +6,10 @@ import numpy as np
 import pandas as pd
 from joblib import load
 
+from HousePricePrediction.logger import setup_logging
 from HousePricePrediction.score import score_model_mae, score_model_rmse
 
-# Configure logging
-logger = logging.getLogger("scripts")
-logger.setLevel(logging.DEBUG)
-formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-
-# Define console handler
-console_handler = logging.StreamHandler()
-console_handler.setFormatter(formatter)
-logger.addHandler(console_handler)
-
-
-def setup_logging(log_level, log_path, console_log):
-    numeric_level = getattr(logging, log_level.upper(), None)
-    if not isinstance(numeric_level, int):
-        raise ValueError("Invalid log level: %s" % log_level)
-    logger.setLevel(numeric_level)
-
-    if log_path:
-        log_directory, log_file = os.path.split(log_path)
-        if not log_directory:
-            log_directory = "."
-        os.makedirs(log_directory, exist_ok=True)
-        if not log_file:
-            log_file = "logfile.log"
-        log_file_path = os.path.join(log_directory, log_file)
-        file_handler = logging.FileHandler(log_file_path)
-        file_handler.setFormatter(formatter)
-        logger.addHandler(file_handler)
-
-    if not console_log:
-        logger.removeHandler(console_handler)
-
+logger = setup_logging(__name__, logging.INFO, "score.log", console_log=True)
 
 def scoring(processed_dataset_path, ml_model_path, scoring_path):
     logger.info("Starting model scoring...")
@@ -107,7 +77,27 @@ def scoring(processed_dataset_path, ml_model_path, scoring_path):
         final_score = score_model_rmse(final_model, X_test, y_test)
         f.write("Final model RMSE on the test set: {}\n".format(final_score))
 
+    dt_rmse_score = score_model_rmse(DT_model, X_train, y_train)
+    logger.info("Decision Tree Regressor model RMSE score: %f", dt_rmse_score)
+
+    # Score Random Forest models
+    logger.info("Scoring Random Forest models...")
+    rand_cvres = rand_tune_RF_model.cv_results_
+    for mean_score, params in zip(rand_cvres["mean_test_score"], rand_cvres["params"]):
+        logger.info("Random Forest using RandomizedSearchCV model RMSE score: %f", np.sqrt(-mean_score))
+        logger.info("Parameters: %s", params)
+
+    grid_cvres = grid_tune_Tuned_RF_model.cv_results_
+    for mean_score, params in zip(grid_cvres["mean_test_score"], grid_cvres["params"]):
+        logger.info("Random Forest using GridSearchCV model RMSE score: %f", np.sqrt(-mean_score))
+        logger.info("Parameters: %s", params)
+
+    # Score final model
+    final_score = score_model_rmse(final_model, X_test, y_test)
+    logger.info("Final model RMSE on the test set: %f", final_score)
+
     logger.info("Scoring completed and results saved to %s", scoring_path)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -145,5 +135,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    setup_logging(args.log_level, args.log_path, not args.no_console_log)
+    logger = setup_logging("score", args.log_level, args.log_path, not args.no_console_log)
     scoring(args.processed_dataset_path, args.ml_model_path, args.scoring_path)
+
+
