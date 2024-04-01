@@ -1,0 +1,1212 @@
+2024-03-31 22:10:18,764 - INFO - Contents of rand_tune_RF_model_scores.txt:
+Random Forest using RandomizedSearchCV model score: 
+51395.191989570194 {'n_estimators': 30, 'max_features': 3}
+57745.215664098054 {'n_estimators': 10, 'max_features': 1, 'bootstrap': False}
+67749.07650029418 {'n_estimators': 3, 'max_features': 1}
+56996.16048574402 {'n_estimators': 3, 'max_features': 5, 'bootstrap': False}
+50215.10958041685 {'n_estimators': 30, 'max_features': 4}
+58363.665560496614 {'n_estimators': 3, 'max_features': 4}
+51835.43361669208 {'n_estimators': 10, 'max_features': 5}
+58764.61371603867 {'n_estimators': 10, 'max_features': 1}
+51419.866104752255 {'n_estimators': 10, 'max_features': 4, 'bootstrap': False}
+52966.124941638336 {'n_estimators': 30, 'max_features': 2}
+
+
+2024-03-31 22:10:18,765 - INFO - Contents of final_model_score.txt:
+Final model RMSE on the test set: 48063.95439594549
+
+
+2024-03-31 22:10:18,765 - INFO - Contents of LR_model_scores.txt:
+Linear Regression model RMSE score: 68627.87390018745
+Linear Regression model MAE score: 49438.66860915819
+
+
+2024-03-31 22:10:18,765 - INFO - Contents of grid_tune_Tuned_RF_model_scores.txt:
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+
+
+2024-03-31 22:10:18,766 - INFO - Contents of DT_model_score.txt:
+Decision Tree Regressor model RMSE score: 0.0
+
+
+2024-03-31 22:11:30,674 - INFO - Contents of rand_tune_RF_model_scores.txt:
+Random Forest using RandomizedSearchCV model score: 
+51395.191989570194 {'n_estimators': 30, 'max_features': 3}
+57745.215664098054 {'n_estimators': 10, 'max_features': 1, 'bootstrap': False}
+67749.07650029418 {'n_estimators': 3, 'max_features': 1}
+56996.16048574402 {'n_estimators': 3, 'max_features': 5, 'bootstrap': False}
+50215.10958041685 {'n_estimators': 30, 'max_features': 4}
+58363.665560496614 {'n_estimators': 3, 'max_features': 4}
+51835.43361669208 {'n_estimators': 10, 'max_features': 5}
+58764.61371603867 {'n_estimators': 10, 'max_features': 1}
+51419.866104752255 {'n_estimators': 10, 'max_features': 4, 'bootstrap': False}
+52966.124941638336 {'n_estimators': 30, 'max_features': 2}
+
+
+2024-03-31 22:11:30,676 - INFO - Contents of final_model_score.txt:
+Final model RMSE on the test set: 48063.95439594549
+
+
+2024-03-31 22:11:30,676 - INFO - Contents of LR_model_scores.txt:
+Linear Regression model RMSE score: 68627.87390018745
+Linear Regression model MAE score: 49438.66860915819
+
+
+2024-03-31 22:11:30,676 - INFO - Contents of grid_tune_Tuned_RF_model_scores.txt:
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+
+
+2024-03-31 22:11:30,677 - INFO - Contents of DT_model_score.txt:
+Decision Tree Regressor model RMSE score: 0.0
+
+
+2024-03-31 22:12:32,182 - INFO - Contents of rand_tune_RF_model_scores.txt:
+Random Forest using RandomizedSearchCV model score: 
+51395.191989570194 {'n_estimators': 30, 'max_features': 3}
+57745.215664098054 {'n_estimators': 10, 'max_features': 1, 'bootstrap': False}
+67749.07650029418 {'n_estimators': 3, 'max_features': 1}
+56996.16048574402 {'n_estimators': 3, 'max_features': 5, 'bootstrap': False}
+50215.10958041685 {'n_estimators': 30, 'max_features': 4}
+58363.665560496614 {'n_estimators': 3, 'max_features': 4}
+51835.43361669208 {'n_estimators': 10, 'max_features': 5}
+58764.61371603867 {'n_estimators': 10, 'max_features': 1}
+51419.866104752255 {'n_estimators': 10, 'max_features': 4, 'bootstrap': False}
+52966.124941638336 {'n_estimators': 30, 'max_features': 2}
+
+
+2024-03-31 22:12:32,182 - INFO - Contents of final_model_score.txt:
+Final model RMSE on the test set: 48063.95439594549
+
+
+2024-03-31 22:12:32,182 - INFO - Contents of LR_model_scores.txt:
+Linear Regression model RMSE score: 68627.87390018745
+Linear Regression model MAE score: 49438.66860915819
+
+
+2024-03-31 22:12:32,183 - INFO - Contents of grid_tune_Tuned_RF_model_scores.txt:
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+
+
+2024-03-31 22:12:32,183 - INFO - Contents of DT_model_score.txt:
+Decision Tree Regressor model RMSE score: 0.0
+
+
+2024-03-31 22:12:48,849 - INFO - Contents of rand_tune_RF_model_scores.txt:
+Random Forest using RandomizedSearchCV model score: 
+51395.191989570194 {'n_estimators': 30, 'max_features': 3}
+57745.215664098054 {'n_estimators': 10, 'max_features': 1, 'bootstrap': False}
+67749.07650029418 {'n_estimators': 3, 'max_features': 1}
+56996.16048574402 {'n_estimators': 3, 'max_features': 5, 'bootstrap': False}
+50215.10958041685 {'n_estimators': 30, 'max_features': 4}
+58363.665560496614 {'n_estimators': 3, 'max_features': 4}
+51835.43361669208 {'n_estimators': 10, 'max_features': 5}
+58764.61371603867 {'n_estimators': 10, 'max_features': 1}
+51419.866104752255 {'n_estimators': 10, 'max_features': 4, 'bootstrap': False}
+52966.124941638336 {'n_estimators': 30, 'max_features': 2}
+
+
+2024-03-31 22:12:48,849 - INFO - Contents of final_model_score.txt:
+Final model RMSE on the test set: 48063.95439594549
+
+
+2024-03-31 22:12:48,850 - INFO - Contents of LR_model_scores.txt:
+Linear Regression model RMSE score: 68627.87390018745
+Linear Regression model MAE score: 49438.66860915819
+
+
+2024-03-31 22:12:48,850 - INFO - Contents of grid_tune_Tuned_RF_model_scores.txt:
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+Random Forest using GridSearchCV model score: 
+67749.07650029418 {'max_features': 1, 'n_estimators': 3}
+58764.61371603867 {'max_features': 1, 'n_estimators': 10}
+55923.21023317486 {'max_features': 1, 'n_estimators': 30}
+64062.72861884957 {'max_features': 2, 'n_estimators': 3}
+55479.21774655382 {'max_features': 2, 'n_estimators': 10}
+52966.124941638336 {'max_features': 2, 'n_estimators': 30}
+61659.991420085375 {'max_features': 3, 'n_estimators': 3}
+54094.37752475757 {'max_features': 3, 'n_estimators': 10}
+51395.191989570194 {'max_features': 3, 'n_estimators': 30}
+58363.665560496614 {'max_features': 4, 'n_estimators': 3}
+52396.19523340483 {'max_features': 4, 'n_estimators': 10}
+50215.10958041685 {'max_features': 4, 'n_estimators': 30}
+58934.871439639806 {'max_features': 5, 'n_estimators': 3}
+51835.43361669208 {'max_features': 5, 'n_estimators': 10}
+49929.33793501307 {'max_features': 5, 'n_estimators': 30}
+65870.33039527836 {'bootstrap': False, 'max_features': 1, 'n_estimators': 3}
+57745.215664098054 {'bootstrap': False, 'max_features': 1, 'n_estimators': 10}
+63087.194157215 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54773.96059466593 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60379.84359138394 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+51887.898627977534 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+57719.276994840606 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+51419.866104752255 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+56996.16048574402 {'bootstrap': False, 'max_features': 5, 'n_estimators': 3}
+51334.31166213552 {'bootstrap': False, 'max_features': 5, 'n_estimators': 10}
+
+
+2024-03-31 22:12:48,851 - INFO - Contents of DT_model_score.txt:
+Decision Tree Regressor model RMSE score: 0.0
+
+
