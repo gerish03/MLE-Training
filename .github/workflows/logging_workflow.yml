@@ -129,5 +129,8 @@ jobs:
           python scripts/train.py --log-level DEBUG --log-path logs/ --no-console-log
           python scripts/score.py --log-level DEBUG --log-path logs/ --no-console-log
 
+      - name: Logs Output
+        run: cat logs/logfile.log
+
       - name: Display Tree
         run: tree
