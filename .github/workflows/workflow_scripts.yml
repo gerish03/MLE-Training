@@ -3,7 +3,7 @@ name: Workflow_Scripts
 on:
   pull_request:
     branches:
-      - main
+      - dummy branches
 
 jobs:
   unit_test_job:
