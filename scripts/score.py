@@ -1,5 +1,4 @@
 import argparse
-import logging
 import os
 
 import numpy as np
@@ -9,7 +8,6 @@ from joblib import load
 from HousePricePrediction.logger import setup_logging
 from HousePricePrediction.score import score_model_mae, score_model_rmse
 
-logger = setup_logging(__name__, logging.INFO, "score.log", console_log=True)
 
 def scoring(processed_dataset_path, ml_model_path, scoring_path):
     logger.info("Starting model scoring...")
