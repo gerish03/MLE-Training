@@ -125,12 +125,12 @@ jobs:
 
       - name: Run workflow scripts
         run: |
-          python scripts/ingest_data.py --log-level DEBUG --log-path logs/ --no-console-log
-          python scripts/train.py --log-level DEBUG --log-path logs/ --no-console-log
-          python scripts/score.py --log-level DEBUG --log-path logs/ --no-console-log
+          python scripts/ingest_data.py data/raw data/processed --log-level INFO --log-path logs/Script_output.log
+          python scripts/train.py data/processed artifacts/models --log-level INFO --log-path logs/Script_output.log
+          python scripts/score.py data/processed artifacts/models artifacts/models --log-level INFO --log-path logs/Script_output.log
 
       - name: Logs Output
-        run: cat logs/logfile.log
+        run: cat logs/Script_output.log
 
-      - name: Display Tree
+      - name: Final Tree
         run: tree
