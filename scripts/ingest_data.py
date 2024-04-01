@@ -1,5 +1,4 @@
 import argparse
-import logging
 import os
 
 from HousePricePrediction.ingest_data import (StratifiedShuffleSplit_data,
