@@ -109,7 +109,6 @@ def scoring(processed_dataset_path, ml_model_path, scoring_path):
 
     logger.info("Scoring completed and results saved to %s", scoring_path)
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Scoring of Model and storing them in metrics"

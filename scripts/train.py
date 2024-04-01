@@ -87,7 +87,6 @@ def training_model(processed_dataset_path, ml_model_path):
 
     logger.info("Training completed and models saved to %s", ml_model_path)
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Making ML model and Storing")
     parser.add_argument(

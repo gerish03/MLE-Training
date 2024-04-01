@@ -39,7 +39,6 @@ def setup_logging(log_level, log_path, console_log):
     if not console_log:
         logger.removeHandler(console_handler)
 
-
 def data_ingestion(raw_dataset_path, processed_dataset_path):
     logger.info("Starting data ingestion process...")
     fetch_housing_data(housing_path=raw_dataset_path)
