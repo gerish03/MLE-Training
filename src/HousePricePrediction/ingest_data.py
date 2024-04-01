@@ -66,3 +66,4 @@ def preprocessing_data(housing_data):
     housing_cat = X[["ocean_proximity"]]
     X_prepared = X_tr.join(pd.get_dummies(housing_cat, drop_first=True))
     return X_prepared, y
+
