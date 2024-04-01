@@ -5,3 +5,4 @@ dist/
 *.csv
 *.pkl
 *.txt
+*.log
