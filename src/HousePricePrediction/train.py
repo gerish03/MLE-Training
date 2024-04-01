@@ -1,8 +1,16 @@
+import logging
+import os
+
 from scipy.stats import randint
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
 from sklearn.tree import DecisionTreeRegressor
+
+from HousePricePrediction.logger import setup_logging
+
+logger = setup_logging(__name__, logging.INFO, "logs/Script_output.log", console_log=True)
+logger.info("Executing train module...")
 
 
 def train_linear_regression(X_train, y_train):

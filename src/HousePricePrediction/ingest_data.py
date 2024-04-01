@@ -1,3 +1,4 @@
+import logging
 import os
 import tarfile
 import urllib.request
@@ -6,6 +7,12 @@ import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import StratifiedShuffleSplit
+
+from HousePricePrediction.logger import setup_logging
+
+logger = setup_logging(__name__, logging.INFO, "logs/Script_output.log", console_log=True)
+logger.info("Executing ingest_data module...")
+
 
 DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml/master/"
 HOUSING_PATH = os.path.join("data", "raw")
