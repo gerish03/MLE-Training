@@ -1,0 +1,133 @@
+name: Logging_Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  unit_test_job:
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -el {0}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+            activate-environment: my-env
+            environment-file: deploy/conda/env.yml
+            auto-activate-base: false
+
+      - name: Display Tree After Building
+        run: tree
+
+      - name: Install package in dev mode
+        run: pip install -e .
+
+      - name: Install
+        run: |
+          pip install setuptools
+          pip install build
+
+      - name: Installing Pytest
+        run: pip install pytest
+
+      - name: Run unit tests
+        run: |
+          pytest tests/unit_tests/test_ingest_data.py
+          pytest tests/unit_tests/test_score.py
+          pytest tests/unit_tests/test_train.py
+
+  build_job:
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -el {0}
+    needs: unit_test_job
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+            activate-environment: my-env
+            environment-file: deploy/conda/env.yml
+            auto-activate-base: false
+
+      - name: Build the package
+        run: |
+          pip install -e .
+          pip install build
+          python -m build
+
+      - name: Installing whl
+        run: pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
+
+      - name: Install
+        run: pip install setuptools
+
+      - name: Installing Pytest
+        run: pip install pytest
+
+      - name: Run test
+        run: pytest tests/functional_tests/test_package.py
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+            name: Python-Package-Artifacts-MLE
+            path: dist/
+
+  deploy_job:
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -el {0}
+    needs: build_job
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+            activate-environment: my-env
+            environment-file: deploy/conda/env.yml
+            auto-activate-base: false
+
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+            name: Python-Package-Artifacts-MLE
+
+      - name: Build Package
+        run: |
+          pip install build
+          python -m build
+
+      - name: Installing whl
+        run: pip install dist/HousePricePrediction-0.0.1-py3-none-any.whl
+
+      - name: Install
+        run: pip install setuptools
+
+      - name: Run workflow scripts in help mode
+        run: |
+          python scripts/ingest_data.py -h
+          python scripts/train.py -h
+          python scripts/score.py -h
+
+      - name: Run workflow scripts
+        run: |
+          python scripts/ingest_data.py --log-level DEBUG --log-path logs/ --no-console-log
+          python scripts/train.py --log-level DEBUG --log-path logs/ --no-console-log
+          python scripts/score.py --log-level DEBUG --log-path logs/ --no-console-log
+
+      - name: Display Tree
+        run: tree
