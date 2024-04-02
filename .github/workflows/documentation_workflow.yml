@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build_Docs:
     runs-on: ubuntu-latest
     defaults:
       run:
