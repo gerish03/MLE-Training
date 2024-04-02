@@ -1,22 +1,27 @@
-import joblib
+import logging
+import os
+
 from scipy.stats import randint
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
 from sklearn.tree import DecisionTreeRegressor
 
+from HousePricePrediction.logger import setup_logging
+
+logger = setup_logging(__name__, logging.INFO, "logs/Script_output.log", console_log=True)
+logger.info("Executing train module...")
+
 
 def train_linear_regression(X_train, y_train):
     lin_reg = LinearRegression()
     lin_reg.fit(X_train, y_train)
-    joblib.dump(lin_reg,"artifacts/lin_reg_model.pkl")
     return lin_reg
 
 
 def train_decision_tree(X_train, y_train):
     tree_reg = DecisionTreeRegressor(random_state=42)
     tree_reg.fit(X_train, y_train)
-    joblib.dump(tree_reg,"artifacts/tree_reg_model.pkl")
     return tree_reg
 
 def rand_tune_random_forest(X_train, y_train):

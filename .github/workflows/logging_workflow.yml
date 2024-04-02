@@ -1,9 +1,9 @@
-name: Workflow_Scripts
+name: Logging_Workflow
 
 on:
   pull_request:
     branches:
-      - dummy branches
+      - main
 
 jobs:
   unit_test_job:
@@ -106,7 +106,7 @@ jobs:
         with:
             name: Python-Package-Artifacts-MLE
 
-      - name: Build Package
+      - name: Building Package
         run: |
           pip install build
           python -m build
@@ -125,9 +125,12 @@ jobs:
 
       - name: Run workflow scripts
         run: |
-          python scripts/ingest_data.py data/raw data/processed
-          python scripts/train.py data/processed artifacts/models
-          python scripts/score.py data/processed artifacts/models artifacts/metrics
+          python scripts/ingest_data.py data/raw data/processed --log-level INFO --log-path logs/Script_output.log
+          python scripts/train.py data/processed artifacts/models --log-level INFO --log-path logs/Script_output.log
+          python scripts/score.py data/processed artifacts/models artifacts/models --log-level INFO --log-path logs/Script_output.log
 
-      - name: Display
+      - name: Logs Output
+        run: cat logs/Script_output.log
+
+      - name: Final Tree
         run: tree
