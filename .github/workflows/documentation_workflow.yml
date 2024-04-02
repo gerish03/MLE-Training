@@ -15,6 +15,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+            activate-environment: my-env
+            environment-file: env.yml
+            auto-activate-base: false
+
       - name: Install Tree
         run: sudo apt-get install tree -y
 
